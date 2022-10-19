@@ -1,0 +1,61 @@
+/*odraditi ovo u flexu*/
+li {
+    display: inline;
+    margin-right: 2rem;
+}
+
+.left {
+    float: left;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title h4 {
+    margin-right: 2rem;
+}
+
+
+.card {
+    border: solid lightgrey;
+    margin: 0 2rem;
+    display: flex;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+}
+
+.other-images {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-image img {
+    margin: 0.5rem;
+}
+
+.other-images img {
+    max-width: 8rem;
+    margin: 0.5rem;
+}
+
+img {
+    max-width:26em;
+
+}
+
+.info {
+    margin: 0 3rem
+}
+
+.block2 {
+    float: right;
+}
+
+.right {
+    float: right;
+}
