@@ -5,24 +5,85 @@
 /*    margin-right: 2rem;*/
 /*}*/
 
+
+/*Standardne rezolucije za @media:*/
+
+/* Extra small devices (phones, 600px and down) */
+/*@media only screen and (max-width: 600px) {...}*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*@media only screen and (min-width: 600px) {...}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+/*@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {...}*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*@media only screen and (min-width: 1200px) {...}*/
+
 .nav-list {
     display: flex;
 }
 
 .nav-list-left {
     display: flex;
-    margin-left: 20rem;
+    margin-left: auto;
 }
+
+@media only screen and (max-width: 1200px) {
+    .nav-list-left {
+        margin-left: 5rem;
+    }
+
+    .nav-list-right {
+        margin-right: 5rem;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .nav-list-left {
+        margin-left: auto;
+        font-size: 90%;
+
+    }
+
+    .nav-list-right {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 90%;
+    }
+}
+
+@media only screen and (max-width: 776px) {
+    .nav-list-left {
+        margin-left: 1rem;
+    }
+
+    .nav-list-right {
+        margin-right: 1rem;
+        margin-left: auto;
+    }
+
+    .nav-list-left, .nav-list-right {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 .nav-list-right {
     display: flex;
     margin-left: auto;
-    margin-right: 20rem;
+    margin-right: auto;
 }
 
 .nav-item {
     list-style: none;
     margin-right: 1.5rem;
+    white-space: nowrap;
 }
 
 .nav-item a {

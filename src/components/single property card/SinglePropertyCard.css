@@ -11,11 +11,10 @@
     margin-right: 2rem;
 }
 
-
 .card {
     border: solid lightgrey;
-    margin: 0 22rem;
     display: flex;
+
 }
 
 .images {
@@ -38,18 +37,10 @@
 }
 
 img {
-    max-width:26em;
-
+    max-width: 100%;
+    height: auto;
 }
 
 .info {
-    margin: 0 3rem
-}
-
-.block2 {
-    float: right;
-}
-
-.right {
-    float: right;
+    margin-left: 3rem;
 }
