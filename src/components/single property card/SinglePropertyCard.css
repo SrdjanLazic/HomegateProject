@@ -2,21 +2,31 @@
     float: left;
 }
 
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+
+
 .title {
     display: flex;
     align-items: center;
 }
 
-.title h4 {
+.title h3 {
     margin-right: 2rem;
 }
 
 .card {
+    border: #e8e8e8 solid thin;
     display: flex;
     -webkit-box-shadow: 0px 0px 16px -11px #000000;
     box-shadow: 0px 0px 16px -11px #000000;
     border-radius: 8px;
+    padding: 1rem;
 }
+
 
 button {
     background-color:transparent;
@@ -40,26 +50,28 @@ button {
 .images {
     display: flex;
     flex-direction: column;
-
 }
 
 .other-images {
     display: flex;
     flex-direction: row;
+    gap: 0.3rem;
 }
 
-.main-image img {
-    margin: 0.5rem;
+hr {
+    border: #efefef solid thin;
+}
+
+.main-image {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .other-images img {
-    max-width: 8rem;
-    margin: 0.5rem;
+    max-width: 10rem;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
     border-radius: 8px;
 }
 

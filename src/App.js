@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./components/home/Home";
 
 
+
 function App() {
   return (
     // <div className="App">
@@ -18,11 +19,14 @@ function App() {
     //         <PropertyDetails></PropertyDetails>
     //     </div>
     // </div>
-      <Routes>
-          <Route path={"/"} element={ <Home/> }/>
-          <Route path={"/search"} element={ <SinglePropertyCard/> }/>
-          <Route path={"/details"} element={ <PropertyDetails/> }/>
-      </Routes>
+      <div>
+          <Header/>
+          <Routes>
+              <Route path={"/"} element={<Home/>}/>
+              <Route path={"/search"} element={<SinglePropertyCard/>}/>
+              <Route path={"/details"} element={<PropertyDetails/>}/>
+          </Routes>
+      </div>
   );
 }
 
