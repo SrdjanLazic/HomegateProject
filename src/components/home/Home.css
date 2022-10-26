@@ -1,0 +1,136 @@
+.search-box {
+    position: absolute;
+    width: 24rem;
+    background-color: white;
+    top: 5rem;
+    border-radius: 8px;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-title {
+    margin-bottom: 4px;
+}
+
+.banner-subtitle {
+    margin-top: 4px;
+}
+
+.banner {
+    position: absolute;
+    display: flex;
+    background-color: #E6EFFF;
+    top: 36rem;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 60%;
+}
+
+.list-property-button {
+    border-radius: 4px;
+    padding: 0 32px;
+    border: none;
+    background-color: #1E50AD;
+    color: white;
+    height: 2.5rem;
+    font-size: 1em
+}
+
+.banner-text {
+    display: inline-block;
+}
+
+.banner-image {
+    width: 15%;
+    display: inline-block;
+}
+
+.top {
+    position: relative;
+}
+
+.redeem {
+    margin: 32px 0 24px 0;
+    display: flex;
+    width: auto;
+    justify-content: center;
+}
+
+#location-input {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#distance-dropdown {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    height: 2.7rem;
+}
+
+#property-type-dropdown {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#price-dropdown {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-right: 8px;
+}
+
+#rooms-dropdown {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    margin-left: 8px;
+}
+
+.search-input {
+    height: 2.5rem;
+    background-color: #F5F5F5;
+    font-size: 1em;
+    border: none;
+    border-bottom: 1px solid #A7A7A7;
+    padding-left: 8px;
+
+}
+
+#redeem-text {
+    margin-left: 8px;
+}
+
+.search-button {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: 4px;
+    border: none;
+    background-color: #E5007D;
+    color: white;
+    height: 2.5rem;
+    font-size: 1em
+}
+
+.search-button:hover {
+    background-color: #93004d;
+    cursor: pointer;
+}
+
+.search-parameters-input {
+    margin-top: 16px;
+    display: grid;
+    grid-row-gap: 12px;
+    grid-column-gap: 4px;
+    grid-template-columns: 6rem 6rem 6rem 6rem;
+}
+
+.type-radio {
+    display: flex;
+}
+
+.rentRadio   {
+    margin-right: 40px;
+}
+
+#rent, #buy {
+    margin-right: 8px;
+}

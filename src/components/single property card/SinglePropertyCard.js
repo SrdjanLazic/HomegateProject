@@ -5,6 +5,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import {Link} from "react-router-dom";
 import PropertyDetails from "../property details/PropertyDetails";
 
+
 function SinglePropertyCard(props) {
     return (
         <div class={"layout-container"}>
@@ -48,7 +49,7 @@ function SinglePropertyCard(props) {
                                 mit
                                 seiner
                                 sonnigen Terrasse lädt die Liegenschafts-Besucher zum</p>
-                            <button>Contact the advertiser</button>
+                            <button className={"contact-button"}>Contact the advertiser</button>
                         </div>
                         <hr/>
                         <div class="footer">

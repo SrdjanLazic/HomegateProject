@@ -21,14 +21,14 @@ a {
 .card {
     border: #e8e8e8 solid thin;
     display: flex;
-    -webkit-box-shadow: 0px 0px 16px -11px #000000;
+    -webkit-box-shadow: 0 0 16px -11px #000000;
     box-shadow: 0px 0px 16px -11px #000000;
     border-radius: 8px;
     padding: 1rem;
 }
 
 
-button {
+.contact-button {
     background-color:transparent;
     border-radius:8px;
     border:1px solid #4e6096;
@@ -39,13 +39,11 @@ button {
     padding:12px 28px;
     text-decoration:none;
 }
-button {
-    background-color:transparent;
+
+button:hover {
+    background-color: lavender;
 }
-button {
-    position:relative;
-    top:1px;
-}
+
 
 .images {
     display: flex;
