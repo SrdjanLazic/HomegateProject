@@ -21,6 +21,7 @@ function App() {
     // </div>
       <div>
           <Header/>
+          <hr/>
           <Routes>
               <Route path={"/"} element={<Home/>}/>
               <Route path={"/search"} element={<SinglePropertyCard/>}/>

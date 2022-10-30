@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import KeyIllustration from './lock-illustration.png'
 
 
-function Home(props) {
+function Home() {
     const navigate = useNavigate();
     return (
         <div>

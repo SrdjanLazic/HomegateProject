@@ -4,9 +4,21 @@ import Header from "../header/Header";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import {Link} from "react-router-dom";
 import PropertyDetails from "../property details/PropertyDetails";
+import axios from "axios";
+const baseURL = "https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com";
 
 
 function SinglePropertyCard(props) {
+
+    let listings = []
+
+
+    axios.get(baseURL + "/prod/listings").then((response) => {
+        listings = response.data
+    });
+
+
+
     return (
         <div class={"layout-container"}>
             <Link to={"/details"} component={PropertyDetails} class={"card-link"}>
@@ -33,7 +45,7 @@ function SinglePropertyCard(props) {
                             <h3>5.5rm</h3>
                             <p>Premium</p>
                         </div>
-                        <hr/>
+                        <hr className={"first-hr"}/>
                         <div class="description">
                             <strong>8047 Zürich</strong>
                             <p>Details zur Liegenschaft (inkl. Dokumentation) finden Sie in der beigelegten
@@ -53,11 +65,14 @@ function SinglePropertyCard(props) {
                         </div>
                         <hr/>
                         <div class="footer">
-                            <span><FavoriteBorderIcon/>Save</span>
+                            <span className={"save-icon"}><FavoriteBorderIcon/><span>Save</span></span>
+                            
+                            <button className={"contact-button"}>Contact</button>
                         </div>
                     </div>
                 </div>
             </Link>
+
         </div>
     );
 }
