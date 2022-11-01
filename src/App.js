@@ -5,6 +5,8 @@ import SinglePropertyCard from "./components/single property card/SingleProperty
 import PropertyDetails from "./components/property details/PropertyDetails";
 import { Routes, Route } from 'react-router-dom';
 import Home from "./components/home/Home";
+import Search from "./components/search/Search";
+import Favourites from "./components/favourites/Favourites";
 
 
 
@@ -24,8 +26,9 @@ function App() {
           <hr/>
           <Routes>
               <Route path={"/"} element={<Home/>}/>
-              <Route path={"/search"} element={<SinglePropertyCard/>}/>
-              <Route path={"/details"} element={<PropertyDetails/>}/>
+              <Route path={"/search"} element={<Search/>}/>
+              <Route path={"/details/:id"} element={<PropertyDetails/>}/>
+              <Route path={"/favourites"} element={<Favourites/>}/>
           </Routes>
       </div>
   );

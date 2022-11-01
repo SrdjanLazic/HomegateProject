@@ -1,32 +1,34 @@
-import React from 'react';
 import './SinglePropertyCard.css';
-import Header from "../header/Header";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useSelector, useDispatch } from 'react-redux'
+import { addToFavourites, removeFromFavourites } from '../../features/favourites/favouritesSlice'
 import {Link} from "react-router-dom";
 import PropertyDetails from "../property details/PropertyDetails";
-import axios from "axios";
-const baseURL = "https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com";
+
+function changeButtonValue(favourited){
+
+
+}
 
 
 function SinglePropertyCard(props) {
 
-    let listings = []
+    const favourites = useSelector((state) => state.favourites.value)
+    const dispatch = useDispatch()
+    let favourited = false
 
-
-    axios.get(baseURL + "/prod/listings").then((response) => {
-        listings = response.data
-    });
-
-
+    let listing = props.listing
 
     return (
         <div class={"layout-container"}>
-            <Link to={"/details"} component={PropertyDetails} class={"card-link"}>
+            <Link to={`/details/${listing.id}`} component={PropertyDetails} class={"card-link"}>
                 <div class="card">
                     <div className={"images"}>
                         <div class="main-image">
-                            <img
-                                src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/hgonif/3002141007/image/42d0289f48469599ab639d066bb3d9b4.jpg"/>
+                            {/*<img*/}
+                            {/*    src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/hgonif/3002141007/image/42d0289f48469599ab639d066bb3d9b4.jpg"/>*/}
+                            <img src={listing.image || "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"}/>
                         </div>
                         <div class="other-images">
                             <img
@@ -40,10 +42,11 @@ function SinglePropertyCard(props) {
 
                     <div class="info">
                         <div class="title">
-                            <h3>3,500,000.–</h3>
-                            <h3>150<span>m<sup>2</sup></span></h3>
-                            <h3>5.5rm</h3>
-                            <p>Premium</p>
+                            {/*<h3>3,500,000.–</h3>*/}
+                            {/*<h3>150<span>m<sup>2</sup></span></h3>*/}
+                            {/*<h3>5.5rm</h3>*/}
+                            {/*<p>Premium</p>*/}
+                            <h3>{listing.title}</h3>
                         </div>
                         <hr className={"first-hr"}/>
                         <div class="description">
@@ -65,14 +68,39 @@ function SinglePropertyCard(props) {
                         </div>
                         <hr/>
                         <div class="footer">
-                            <span className={"save-icon"}><FavoriteBorderIcon/><span>Save</span></span>
+                            {/*<span className={"save-icon"}><FavoriteBorderIcon/><span>Save</span></span>*/}
+
+                            {
+                                favourited === false ?
+                                    <span
+                                        className={"save-icon"}
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            dispatch(addToFavourites(listing));
+                                            favourited = true;
+                                            changeButtonValue(favourited)
+                                        }}
+                                    ><FavoriteBorderIcon/>Save</span>
+
+                                    :
+
+                                    <span
+                                        className={"save-icon"}
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            dispatch(removeFromFavourites);
+                                            favourited = false;
+                                            changeButtonValue(favourited)
+                                        }}
+                                    ><FavoriteIcon/>Save</span>
+                            }
+
                             
                             <button className={"contact-button"}>Contact</button>
                         </div>
                     </div>
                 </div>
             </Link>
-
         </div>
     );
 }

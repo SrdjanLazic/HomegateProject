@@ -27,9 +27,17 @@
     display: flex;
 }
 
+.nav {
+    height: 80px;
+}
+
 .nav-list-left {
     display: flex;
     margin-left: auto;
+}
+
+.hamburger {
+    display: none;
 }
 
 
@@ -70,8 +78,23 @@
 
     .nav-list-left, .nav-list-right {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
+
+    .hamburger {
+        display: inline-block;
+    }
+    
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none;
+    }
+
+
+
 }
 
 
