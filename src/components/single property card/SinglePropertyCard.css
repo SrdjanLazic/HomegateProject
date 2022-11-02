@@ -91,10 +91,10 @@ hr {
 
 .footer {
     display: flex;
-    flex-display: row;
+    flex-direction: row;
 }
 
-img {
+.card .images img {
     border-radius: 8px;
 }
 

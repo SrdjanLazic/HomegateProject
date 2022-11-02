@@ -28,7 +28,7 @@ function SinglePropertyCard(props) {
                         <div class="main-image">
                             {/*<img*/}
                             {/*    src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/hgonif/3002141007/image/42d0289f48469599ab639d066bb3d9b4.jpg"/>*/}
-                            <img src={listing.image || "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"}/>
+                            <img src={listing.image || "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/800px-Image_not_available.png?20210219185637"}/>
                         </div>
                         <div class="other-images">
                             <img

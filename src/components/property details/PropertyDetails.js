@@ -72,7 +72,7 @@ function PropertyDetails(props) {
                 <div dangerouslySetInnerHTML={{__html: currentListing.description}}></div>
             </div>
             <h2>Other properties you might like:</h2>
-            <div className={"similar-listings"}>
+            <div className={"similar-properties-holder"}>
                 {
                     similarListings.map(
                         listing => (

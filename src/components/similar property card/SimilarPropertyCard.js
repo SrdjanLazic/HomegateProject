@@ -1,4 +1,5 @@
 import React from 'react';
+import './SimilarPropertyCard.css'
 
 function SimilarPropertyCard(props) {
 
@@ -7,8 +8,9 @@ function SimilarPropertyCard(props) {
     return (
 
         <div className={"similar-card"}>
-            <img src={listing.images || "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"}/>
-            <p>{listing.title}</p>
+            <div className={"sim-img-container"}><img className={"similar-property-image"}
+                    src={listing.images || "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/800px-Image_not_available.png?20210219185637"}/></div>
+            <div className={"sim-desc-container"}><p className={"similar-property-title"}>{listing.title}</p></div>
         </div>
     );
 }
