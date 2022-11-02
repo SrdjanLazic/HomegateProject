@@ -4,6 +4,7 @@ import Header from "../header/Header";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import SinglePropertyCard from "../single property card/SinglePropertyCard";
+import SimilarPropertyCard from "../similar property card/SimilarPropertyCard";
 const baseURL = "https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com";
 
 
@@ -26,6 +27,7 @@ function PropertyDetails(props) {
     });
 
     useEffect(() => {
+        const promises = []
         axios
             .get(baseURL + `/prod/listings/${id}/similar`)
             .then(response => {
@@ -35,23 +37,18 @@ function PropertyDetails(props) {
 
                 results.forEach(element =>
                 {
-                    console.log("Similar ID received: " + element)
-                    axios.get(baseURL + `/prod/listings/${element}`)
-                        .then(result => {
-                            console.log("Similar listing received: " + result.data[0].title)
-                            similarListings.push(result.data[0]);
-                            console.log("Length posle then " + similarListings.length)
-                            console.log("Pozvan then za element " + element)
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        });
+                    promises.push(
+                        axios.get(baseURL + `/prod/listings/${element}`)
+                            .then(result => {
+                                similarListings.push(result.data[0])
+                            })
+                            .catch(err => {
+                                console.log(err)
+                            })
+                    )
                 })
             })
-            .then(() => setSimilarListings(similarListings))
-            .catch(err => {
-                console.log(err);
-            });
+            Promise.all(promises).then(() => setSimilarListings(similarListings));
     }, []);
 
 
@@ -74,15 +71,16 @@ function PropertyDetails(props) {
                 <h3>{currentListing.title}</h3>
                 <div dangerouslySetInnerHTML={{__html: currentListing.description}}></div>
             </div>
-            <h1>Similar listings:</h1>
+            <h2>Other properties you might like:</h2>
             <div className={"similar-listings"}>
                 {
                     similarListings.map(
                         listing => (
-                            <div>
-                                <h2>{listing.title}</h2>
-                                <p>{listing.description}</p>
-                            </div>
+                            // <div>
+                            //     <h2>{listing.title}</h2>
+                            //     <p>{listing.description}</p>
+                            // </div>
+                            <SimilarPropertyCard listing={listing}/>
                     ))
                 }
             </div>
