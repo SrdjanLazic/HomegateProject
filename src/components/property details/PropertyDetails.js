@@ -22,6 +22,10 @@ function PropertyDetails(props) {
             setListingImages(response.data[0].images)
         });
 
+
+    });
+
+    useEffect(() => {
         axios
             .get(baseURL + `/prod/listings/${id}/similar`)
             .then(response => {
@@ -36,13 +40,15 @@ function PropertyDetails(props) {
                         .then(result => {
                             console.log("Similar listing received: " + result.data[0].title)
                             similarListings.push(result.data[0]);
+                            console.log("Length posle then " + similarListings.length)
+                            console.log("Pozvan then za element " + element)
                         })
                         .catch(err => {
                             console.log(err);
                         });
                 })
             })
-            .then(()=>setSimilarListings(similarListings))
+            .then(() => setSimilarListings(similarListings))
             .catch(err => {
                 console.log(err);
             });
@@ -68,12 +74,13 @@ function PropertyDetails(props) {
                 <h3>{currentListing.title}</h3>
                 <div dangerouslySetInnerHTML={{__html: currentListing.description}}></div>
             </div>
+            <h1>Similar listings:</h1>
             <div className={"similar-listings"}>
                 {
                     similarListings.map(
                         listing => (
                             <div>
-                                <p>{listing.title}</p>
+                                <h2>{listing.title}</h2>
                                 <p>{listing.description}</p>
                             </div>
                     ))
